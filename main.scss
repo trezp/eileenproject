@@ -1,0 +1,51 @@
+@import "bootstrap";
+
+$primary-color: black;
+$secondary-color: yellow;
+$text-color: purple;
+$default-font-size: 1.5em;
+
+
+.container {
+	max-width: 1200px;
+	margin: auto;
+}
+h1 {
+	color: $primary-color;
+	font-size: 2em;
+} 
+
+.box {
+	@include make-sm-column(4);
+	background-color: $secondary-color;
+	padding: 30px;
+
+	h3 {
+		color: lighten($text-color, 25%);
+		font-weight: bold;
+		font-size: $default-font-size * 2; 
+		margin-top: 0;
+	}
+
+	p {
+		color: darken($text-color, 15%);
+	}
+
+	.makeBigger {
+		font-size: 5em;
+	}
+}
+
+.addBackgroundColor {
+	background-color: $primary-color;
+
+	p {
+		color: white;
+	}
+}
+
+.two-column {
+	@include make-sm-column(6);
+	@include make-row();
+	margin-top: 30px;
+}
